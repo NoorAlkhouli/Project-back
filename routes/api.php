@@ -19,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+Route::group(['prefix' => 'hq'], function(){
+    includeRouteFiles(__DIR__.'/api/hq/');
+});
+
 
 
 Route::get('/get/products', [ProductController::class, 'GetProducts']);
